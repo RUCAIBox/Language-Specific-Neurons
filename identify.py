@@ -13,7 +13,7 @@ over_zero = torch.stack(over_zero, dim=-1)
 num_layers, intermediate_size, lang_num = over_zero.size()
 
 def activation():
-    top_rate = 0.05
+    top_rate = 0.01
     filter_rate = 0.95
     activation_bar_ratio = 0.95
     activation_probs = over_zero / n # layer x inter x lang_num
