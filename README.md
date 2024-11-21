@@ -17,7 +17,7 @@ python identify.py
 ```
 
 ## Computing PPL when Deactivating Neurons
-You should first download the wikipedia texts from https://huggingface.co/datasets/wikimedia/wikipedia. Then tokenize them, concateneate them into a long list, and save them as `data/id.{lang}.train.llama`. Finally, run the following code:
+You should first download the wikipedia texts from https://huggingface.co/datasets/wikimedia/wikipedia. Then tokenize them, concateneate them into a long list, and save them as a `LongTensor` in `data/id.{lang}.train.llama`. Finally, run the following code:
 ```bash
 python ppl.py -m meta-llama/Llama-2-7b-hf -a activation_mask/xxx
 ```
