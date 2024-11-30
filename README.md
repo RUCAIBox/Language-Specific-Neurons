@@ -1,5 +1,6 @@
 # Language-Specific-Neurons
-This repository is the official implementation of our paper "Exploring Language-Specific Regions in Large Language Models".
+This repository is the official implementation of our paper [Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models
+](https://arxiv.org/abs/2402.16438) in ACL 2024.
 
 ## Language Neurons Found by LAPE
 We provide our found language-specific neurons in LLaMA-2 (7B), LLaMA-2 (13B), LLaMA-2 (70B), BLOOM (7B), OPT (6.7B), Mistral (7B), and Phi-2 (2.7B).
@@ -19,10 +20,10 @@ python identify.py
 ## Computing PPL when Deactivating Neurons
 You should first download the wikipedia texts from https://huggingface.co/datasets/wikimedia/wikipedia. Then tokenize them, concateneate them into a long list, and save them as a `LongTensor` in `data/id.{lang}.train.llama`. Finally, run the following code:
 ```bash
-python ppl.py -m meta-llama/Llama-2-7b-hf -a activation_mask/xxx
+CUDA_VISIVLE_DEVICES=0 python ppl.py -m meta-llama/Llama-2-7b-hf -a activation_mask/xxx
 ```
 
 ## Open-ended Generation when Deactivating Neurons
 ```bash
-python generation.py -m meta-llama/Llama-2-7b-hf -a activation_mask/xxx
+CUDA_VISIVLE_DEVICES=0 python generation.py -m meta-llama/Llama-2-7b-hf -a activation_mask/xxx
 ```
