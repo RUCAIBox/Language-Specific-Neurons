@@ -13,7 +13,7 @@ Please use `vllm==0.2.7` to run our code.
 
 Record the activation state:
 ```bash
-python activation.py -m meta-llama/Llama-2-7b-hf -l xx
+CUDA_VISIVLE_DEVICES=0 python activation.py -m meta-llama/Llama-2-7b-hf -l xx
 ```
 Identifying language-specific neurons:
 ```bash
